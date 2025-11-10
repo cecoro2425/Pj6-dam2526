@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void enviarMissatge(View view) {
+        Intent intent = new Intent(this, PJ6Main.class);
+        intent.putExtra("MISSATGE_CLAU", "¡Que comience el juego!");
+        startActivity(intent);
+    }
+
     public void onClick(View arg0){ mostrarAyuda(arg0);}
 
     public void mostrarAyuda(View view){

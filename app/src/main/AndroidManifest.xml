@@ -28,6 +28,9 @@
         <activity
             android:name=".AyudaActivity">
         </activity>
+        <activity
+            android:name=".PJ6Main">
+        </activity>
     </application>
 
 </manifest>
