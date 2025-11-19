@@ -1,6 +1,7 @@
 package dam.projecte.pj6;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,7 +11,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PJ6Main extends AppCompatActivity {
+
+    // ArrayList de juegos después de lectura XML
+    private ArrayList<String> llistaJocs;
 
     private ImageView imatgeJoc;
 
@@ -35,6 +46,33 @@ public class PJ6Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pj6main);
+
+        // INICIO PRUEBA DE LECTURA DEL XML
+
+        LecturaXMLUtility lecturaXML = new LecturaXMLUtility();
+        List<LecturaXMLUtility.Juego> llistaJuegos = null;
+        AssetManager am = getAssets();
+        InputStream is;
+        try {
+            is = am.open("juegos.xml"); //Archivo ubicado en assets
+            llistaJuegos = lecturaXML.analitzarXML(is);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        }
+
+        llistaJocs = new ArrayList<String>();
+        for(LecturaXMLUtility.Juego juego : llistaJuegos){
+            llistaJocs.add(juego.toString());
+        }
+
+        // Muestra por consola los juegos encontrados
+        System.out.println(llistaJocs);
+
+        // FIN DE PRUEBA
 
         Intent intent = getIntent();
         String missatge = intent.getStringExtra("MISSATGE_CLAU");

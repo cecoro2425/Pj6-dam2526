@@ -1,0 +1,12 @@
+<juegos>
+    <juego id="1">
+        <nombre>Pepe y los globos</nombre>
+        <imagenes></imagenes>
+        <pistas></pistas>
+    </juego>
+    <juego id="2">
+        <nombre>Perro 10</nombre>
+        <imagenes></imagenes>
+        <pistas></pistas>
+    </juego>
+</juegos>
