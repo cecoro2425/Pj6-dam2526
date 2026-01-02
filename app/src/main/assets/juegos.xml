@@ -1,12 +1,28 @@
 <juegos>
     <juego id="1">
-        <nombre>Pepe y los globos</nombre>
+        <nombre>Elden ring</nombre>
+        <imagenes><img>R.drawable.armoredcore</img></imagenes>
+        <pistas></pistas>
+    </juego>
+    <juego id="2">
+        <nombre>Armored core</nombre>
         <imagenes></imagenes>
         <pistas></pistas>
     </juego>
     <juego id="2">
-        <nombre>Perro 10</nombre>
+        <nombre>Deltarune</nombre>
         <imagenes></imagenes>
         <pistas></pistas>
     </juego>
+    <juego id="2">
+        <nombre>Outer Wilds</nombre>
+        <imagenes></imagenes>
+        <pistas></pistas>
+    </juego>
+    <juego id="2">
+        <nombre>PErsona 5</nombre>
+        <imagenes></imagenes>
+        <pistas></pistas>
+    </juego>
+
 </juegos>
