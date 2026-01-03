@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -25,23 +26,12 @@ public class PJ6Main extends AppCompatActivity {
 
     private ImageView imatgeJoc;
 
-    private int[] imatgesJoc = {
-            R.drawable.armoredcore,
-            R.drawable.deltarune,
-            R.drawable.eldenring,
-            R.drawable.league
-    };
-
-    private String[] nomsCorrectes = {
-            "Armored Core",
-            "Deltarune",
-            "Elden Ring",
-            "League of Legends"
-    };
     private int indexActual = 0;
+    private int intentoJugada = 0;
     private TextInputEditText inputNom;
     private TextView textResultat, textHint;
     private Button btnConfirmar;
+    private List<LecturaXMLUtility.Juego> llistaJuegos = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +40,7 @@ public class PJ6Main extends AppCompatActivity {
         // INICIO PRUEBA DE LECTURA DEL XML
 
         LecturaXMLUtility lecturaXML = new LecturaXMLUtility();
-        List<LecturaXMLUtility.Juego> llistaJuegos = null;
+
         AssetManager am = getAssets();
         InputStream is;
         try {
@@ -64,7 +54,7 @@ public class PJ6Main extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        llistaJocs = new ArrayList<String>();
+        llistaJocs = new ArrayList<>();
         for(LecturaXMLUtility.Juego juego : llistaJuegos){
             llistaJocs.add(juego.toString());
         }
@@ -87,8 +77,11 @@ public class PJ6Main extends AppCompatActivity {
         btnConfirmar = findViewById(R.id.ConfirmButton);
 
         // Mostrar primera imagen
-        imatgeJoc.setImageResource(imatgesJoc[indexActual]);
-
+        //imatgeJoc.setImageResource(imatgesJoc[indexActual]);
+        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
+                .into(imatgeJoc);
         // Botón que verifica la respuesta
         btnConfirmar.setOnClickListener(v -> comprovarResposta());
     }
@@ -96,44 +89,32 @@ public class PJ6Main extends AppCompatActivity {
     private void avanzarJuego() {
         indexActual++;
 
-        if (indexActual >= imatgesJoc.length) {
+        if (indexActual >= llistaJuegos.size()) {
             textResultat.setText("¡Has completado todos los juegos!");
             return;
         }
 
-        imatgeJoc.setImageResource(imatgesJoc[indexActual]);
+        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada)).into(imatgeJoc);
         inputNom.setText("");
         textHint.setText("");
     }
 
-    private void mostrarPista() {
-        switch(indexActual) {
-            case 0:
-                textHint.setText("Pista: Es un fontanero.");
-                break;
-            case 1:
-                textHint.setText("Pista: Mundo hecho de cubos.");
-                break;
-            case 2:
-                textHint.setText("Pista: En un reino muy lejano.");
-                break;
-            case 3:
-                textHint.setText("Pista: Ciudad, crimen y coches.");
-                break;
-            default:
-                textHint.setText("Sin pistas.");
-                break;
-        }
-    }
+
     private void comprovarResposta() {
         String respostaUsuari = inputNom.getText().toString().trim();
 
-        if (respostaUsuari.equalsIgnoreCase(nomsCorrectes[indexActual])) {
+        if (respostaUsuari.equalsIgnoreCase(llistaJuegos.get(indexActual).getNombre())) {
             textResultat.setText("¡Correcto!");
             avanzarJuego();
         } else {
             textResultat.setText("Incorrecto");
-            mostrarPista();
+            textHint.setText(llistaJuegos.get(indexActual).getPistas().get(intentoJugada));
+            if(intentoJugada<4) intentoJugada++;
+            Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+                    .placeholder(R.drawable.loading)
+                    .error(R.drawable.error)
+                    .into(imatgeJoc);
+            System.out.println(intentoJugada);
         }
     }
 }

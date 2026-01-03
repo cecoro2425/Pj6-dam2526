@@ -24,4 +24,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AyudaActivity.class);
         startActivity(intent);
     }
+
+    public void volverMenu(View view){
+        Intent intent = new Intent(this, PJ6Main.class);
+        startActivity(intent);
+    }
 }
