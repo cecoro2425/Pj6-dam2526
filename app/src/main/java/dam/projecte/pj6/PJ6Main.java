@@ -19,6 +19,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
+import android.util.Log;
+
+
 public class PJ6Main extends AppCompatActivity {
 
     // ArrayList de juegos después de lectura XML
@@ -32,8 +38,11 @@ public class PJ6Main extends AppCompatActivity {
     private TextView textResultat, textHint;
     private Button btnConfirmar;
     private List<LecturaXMLUtility.Juego> llistaJuegos = null;
+    //Tiempo
+    private long tiempoInicio;
 
     protected void onCreate(Bundle savedInstanceState) {
+       /*tiempo*/ tiempoInicio = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pj6main);
 
@@ -90,7 +99,12 @@ public class PJ6Main extends AppCompatActivity {
         indexActual++;
 
         if (indexActual >= llistaJuegos.size()) {
+
+            long tiempoFin = System.currentTimeMillis();
+            long tiempoTotal = (tiempoFin - tiempoInicio) / 1000; // segundos(TIEMPO)
             textResultat.setText("¡Has completado todos los juegos!");
+            guardarPuntuacion(tiempoTotal);
+            //mostrarPuntuacionesConsola();
             return;
         }
 
@@ -117,4 +131,56 @@ public class PJ6Main extends AppCompatActivity {
             System.out.println(intentoJugada);
         }
     }
+       private void guardarPuntuacion(long tiempo) {
+        /*
+        Puntuacions utilitatDB =
+                new Puntuacions(getBaseContext());
+
+        SQLiteDatabase db = utilitatDB.getWritableDatabase();
+
+        ContentValues valors = new ContentValues();
+        valors.put(PuntuacionsContract.TaulaPuntuacio.COLUMNA_TEMPS, tiempo);
+        valors.put(PuntuacionsContract.TaulaPuntuacio.COLUMNA_DATA,
+                String.valueOf(System.currentTimeMillis()));
+
+        db.insert(
+                PuntuacionsContract.TaulaPuntuacio.NOM_TAULA,
+                PuntuacionsContract.TaulaPuntuacio.COLUMNA_NULL,
+                valors
+        );
+    }
+
+
+    private void mostrarPuntuacionesConsola(){
+        Puntuacions utilitatDB = new Puntuacions(getBaseContext());
+        SQLiteDatabase db = utilitatDB.getReadableDatabase();
+
+        String[] projeccio = {
+                PuntuacionsContract.TaulaPuntuacio._ID,
+                PuntuacionsContract.TaulaPuntuacio.COLUMNA_TEMPS,
+                PuntuacionsContract.TaulaPuntuacio.COLUMNA_DATA
+        };
+
+        Cursor cursor = db.query(
+                PuntuacionsContract.TaulaPuntuacio.NOM_TAULA, // tabla
+                projeccio,                                  // columnas
+                null,                                       // WHERE
+                null,                                       // args
+                null,                                       // GROUP BY
+                null,                                       // HAVING
+                null                                        // ORDER
+        );
+
+        while (cursor.moveToNext()) {
+
+            long temps = cursor.getLong(cursor.getColumnIndexOrThrow(PuntuacionsContract.TaulaPuntuacio.COLUMNA_TEMPS));
+
+            String data = cursor.getString(cursor.getColumnIndexOrThrow(PuntuacionsContract.TaulaPuntuacio.COLUMNA_DATA));
+
+            Log.i("PUNTUACIO", "Temps: " + temps + " segons | Data: " + data);
+        }
+
+        cursor.close();*/
+    }
+
 }
