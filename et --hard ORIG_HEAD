@@ -1,0 +1,86 @@
+[33mcommit c01be90134b2b0a3cce102df0f51b3670af9c6e1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Sat Jan 3 13:18:54 2026 +0100
+
+    Revert "Guardar puntuacions bd"
+    
+    This reverts commit 38f0a1f0f27cfe8fac9ded8c400bd0752a81c9b1.
+    
+    # Conflicts:
+    #       app/src/main/assets/juegos.xml
+    #       app/src/main/java/dam/projecte/pj6/PJ6Main.java
+    #       gradle/libs.versions.toml
+
+[33mcommit fde2f1fd9e11a47056472f596bf021c40793886f[m
+Merge: 393f09e 38f0a1f
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Sat Jan 3 13:00:03 2026 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       app/src/main/assets/juegos.xml
+    #       app/src/main/java/dam/projecte/pj6/PJ6Main.java
+    #       gradle/libs.versions.toml
+
+[33mcommit 393f09e1f4348b79d40a6b05cab678b5483cb1fd[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Sat Jan 3 12:58:39 2026 +0100
+
+    mejoras de implementación
+
+[33mcommit 38f0a1f0f27cfe8fac9ded8c400bd0752a81c9b1[m
+Author: JordiAlbas <jordialbaschiavola@gmail.com>
+Date:   Fri Jan 2 16:43:23 2026 +0100
+
+    Guardar puntuacions bd
+
+[33mcommit 1371c4c5cc7e03d2917fda5d51d19dc18c685346[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Mon Dec 1 19:27:17 2025 +0100
+
+    Implementar glide
+
+[33mcommit 5e4c0a0d885ace9567f4f794cb2052a558fd2c2d[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Wed Nov 19 20:52:13 2025 +0100
+
+    Implementación básica de lectura archivo XML
+
+[33mcommit b16eb58995e584507f47eaf1094fd5098ee4f272[m
+Author: JoseAlejandroclot <456336.clot@fje.edu>
+Date:   Mon Nov 17 20:42:13 2025 +0100
+
+    Segundo commit. Primera versión con lógica de juego funcional + imágenes.
+
+[33mcommit e31ca8bfb37adaab81146075e010800712df0e1e[m
+Author: JoseAlejandroclot <456336.clot@fje.edu>
+Date:   Tue Nov 11 19:43:51 2025 +0100
+
+    Enlace entre intro y pàgina principal del juego. Editado ayuda.html con primera versión del texto.
+    siusplau funciona.
+
+[33mcommit 97130c7d3080699f119f1763910b2fe7a91e72c8[m
+Author: JoseAlejandroclot <456336.clot@fje.edu>
+Date:   Mon Nov 10 20:49:37 2025 +0100
+
+    Enlace entre intro y pàgina principal del juego. Editado ayuda.html con primera versión del texto.
+    siusplau funciona.
+
+[33mcommit 803d684d6e78b07d2954b40bbd7f0c34f6beeed4[m
+Author: JoseAlejandroclot <456336.clot@fje.edu>
+Date:   Mon Nov 10 20:22:23 2025 +0100
+
+    Primer Commit. Enlace entre intro y pàgina principal del juego. Editado ayuda.html con primera versión del texto.
+
+[33mcommit d58bd7858d96ed62f3b953ce9516b865348c34b7[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Tue Oct 28 10:54:00 2025 +0100
+
+    Agregando webkit de la sección html ayuda
+
+[33mcommit 0c09aafcd901e9d72803fffbcaa8a7d6a245e380[m
+Author: cecoro2425 <461984.clot@fje.edu>
+Date:   Fri Oct 24 18:47:35 2025 +0200
+
+    Primer commit
