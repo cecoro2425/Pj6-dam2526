@@ -1,25 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="estils.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row mt-3">
-            <h1 class="text-center"><span class="titulo">Sección Ayuda</span></h1>
-        </div>
-        <div class="row mt-3">
-            <div class="col-1"></div>
-            <div class="col">
-                <p class="cuerpo">Aquest joc consisteix en endevinar el videojoc a partir d'una imatge. Tens un màxim de 5 intents. Les imatges comencen sent poc específiques però cada vegada que fallis es tornen més clares.</p>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajuda - Joc d'Endevinar</title>
+        <link rel="stylesheet" href="estils.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <h1 class="text-center">
+                    <i class="bi bi-controller"></i>
+                    <span class="titulo">Secció d'Ajuda</span>
+                </h1>
             </div>
-            <div class="col-1"></div>
+
+            <div class="row mt-3">
+                <div class="col-md-8 offset-md-2">
+                    <p class="cuerpo text-center">
+                        Aquest joc consisteix en endevinar el videojoc a partir d'una imatge.
+                        Tens un màxim de <strong>5 intents</strong>.
+                        Les imatges comencen sent poc específiques i es tornen més clares amb cada error.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-header fw-bold">
+                            <i class="bi bi-question-circle"></i> Com jugar
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li>Observa atentament la imatge.</li>
+                                <li>Escriu el nom del videojoc.</li>
+                                <li>Prem el botó de confirmar.</li>
+                                <li>Si falles, la imatge serà més clara.</li>
+                                <li>Endevina abans de quedar-te sense intents!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-header fw-bold">
+                            <i class="bi bi-star-fill"></i> Sistema d'intents
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Cada estrella representa un intent.
+                                Quan falles, perds una estrella i la imatge es torna més clara.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-info">
+                        <i class="bi bi-lightbulb"></i>
+                        <strong>Consell:</strong> fixa’t en l’estil artístic, el gènere i els detalls del fons.
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-    </div> 
-</body>
+    </body>
 </html>

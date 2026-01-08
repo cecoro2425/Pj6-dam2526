@@ -1,28 +1,37 @@
 <juegos>
     <juego id="1">
-        <nombre>Elden ring</nombre>
-        <imagenes><img>R.drawable.armoredcore</img></imagenes>
-        <pistas></pistas>
+        <nombre>Pokemon</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=133lHISECAMKqKhJ2ERpyaBa5CSD0dPz4</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1XpDbZ0AV6o7GrxG-UyDM22ysrTtavTm1</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=18gAdXFuLJsHhnLL6E703wgHpWA4mhLxB</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=19ZUIdkx5pYXU6MtXI_xkFONWdz-GaB9S</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1pOEc5s3zTqVBVU7Z14Uo99V923FYLuh2</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1OmP35oYQnRU8llaQfzqQ6SZOuuj4ktb5</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Es un juego donde coleccionas criaturas.</pista>
+            <pista>Cada criatura tiene tipos y habilidades especiales.</pista>
+            <pista>Puedes luchar contra otros entrenadores.</pista>
+            <pista>Su lema incluye “¡Hazte con todos!”.</pista>
+            <pista>Los protagonistas suelen ser jóvenes entrenadores que viajan por distintas regiones.</pista>
+        </pistas>
     </juego>
     <juego id="2">
-        <nombre>Armored core</nombre>
-        <imagenes></imagenes>
-        <pistas></pistas>
+        <nombre>Uncharted</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1_v8LaYqzBhm5Is_490cWqhrxN5_DTYl-</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=149RyG0O2dUNmbZiPls3SPIKNQPQoTOHS</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1pMkDSD_dQ2ElNLs1RG4SCZC1PmEhlFbZ</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=15rdcjEymypC10AwgqTTsXi1-d-4LMYsU</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1VqkXyJ-3MjWrVmqGH2wgFO7gdVZvRqaC</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Es un juego de acción y aventuras.</pista>
+            <pista>El protagonista es un cazador de tesoros carismático.</pista>
+            <pista>Viaja por lugares exóticos y ruinas antiguas.</pista>
+            <pista>Combina disparos, exploración y plataformas.</pista>
+            <pista>Es famoso por sus cinemáticas cinematográficas y escenas de acción épicas.</pista>
+        </pistas>
     </juego>
-    <juego id="2">
-        <nombre>Deltarune</nombre>
-        <imagenes></imagenes>
-        <pistas></pistas>
-    </juego>
-    <juego id="2">
-        <nombre>Outer Wilds</nombre>
-        <imagenes></imagenes>
-        <pistas></pistas>
-    </juego>
-    <juego id="2">
-        <nombre>PErsona 5</nombre>
-        <imagenes></imagenes>
-        <pistas></pistas>
-    </juego>
-
 </juegos>

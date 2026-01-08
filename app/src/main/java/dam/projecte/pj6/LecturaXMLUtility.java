@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class LecturaXMLUtility {
     private static final String ns = null;
@@ -17,10 +18,14 @@ public class LecturaXMLUtility {
     public static class Juego {
         final String nombre;
         final String id;
+        final List<String> pistas;
+        final List<String> imagenes;
 
-        public Juego(String nombre,String id){
+        public Juego(String nombre,String id,ArrayList<String> pistas,ArrayList<String> imagenes){
             this.nombre = nombre;
             this.id = id;
+            this.pistas = pistas;
+            this.imagenes = imagenes;
         }
 
         @Override
@@ -28,7 +33,33 @@ public class LecturaXMLUtility {
             return "Juego{" +
                     "nombre='" + nombre + '\'' +
                     ", id='" + id + '\'' +
+                    ", pistas='" + pistas + '\'' +
+                    ", imagenes=" + imagenes +
                     '}';
+        }
+
+        public List<String> getImagenes() {
+            return imagenes;
+        }
+
+        public List<String> getPistas() {
+            return pistas;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (o == null || getClass() != o.getClass()) return false;
+            Juego juego = (Juego) o;
+            return Objects.equals(nombre, juego.nombre) && Objects.equals(id, juego.id);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(nombre, id);
         }
     }
 
@@ -74,9 +105,49 @@ public class LecturaXMLUtility {
         return juegos;
     }
 
+    private List<String> llegirPistas(XmlPullParser parser) throws XmlPullParserException, IOException {
+        List<String> pistas = new ArrayList<>();
+
+        parser.require(XmlPullParser.START_TAG, ns, "pistas");
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String name = parser.getName();
+            // cerquem la pista
+            if (name.equals("pista")) {
+                pistas.add(llegirPista(parser));
+            } else {
+                saltarEtiqueta(parser);
+            }
+        }
+        return pistas;
+    }
+
+    private List<String> llegirImagenes(XmlPullParser parser) throws XmlPullParserException, IOException {
+        List<String> imagenes = new ArrayList<>();
+
+        parser.require(XmlPullParser.START_TAG, ns, "imagenes");
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
+            String name = parser.getName();
+            // cerquem la pista
+            if (name.equals("imagen")) {
+                imagenes.add(llegirImagen(parser));
+            } else {
+                saltarEtiqueta(parser);
+            }
+        }
+        return imagenes;
+    }
+
     private Juego llegirJuego(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "juego");
         String nom = null;
+        List<String> pista = new ArrayList<>();
+        List<String> imagen = new ArrayList<>();
         String id = parser.getAttributeValue(null, "id");
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -85,11 +156,18 @@ public class LecturaXMLUtility {
             String name = parser.getName();
             if (name.equals("nombre")) {
                 nom = llegirNom(parser);
-            }  else {
+            }
+            else if (name.equals("pistas")){
+                pista = llegirPistas(parser);
+            }
+            else if (name.equals("imagenes")){
+                imagen = llegirImagenes(parser);
+            }
+            else {
                 saltarEtiqueta(parser);
             }
         }
-        return new Juego(nom, id);
+        return new Juego(nom, id, (ArrayList<String>) pista, (ArrayList<String>) imagen);
     }
 
     /**
@@ -105,6 +183,20 @@ public class LecturaXMLUtility {
         String nom = llegirText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "nombre");
         return nom;
+    }
+
+    private String llegirPista(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "pista");
+        String pista = llegirText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "pista");
+        return pista;
+    }
+
+    private String llegirImagen(XmlPullParser parser) throws IOException, XmlPullParserException {
+        parser.require(XmlPullParser.START_TAG, ns, "imagen");
+        String imagen = llegirText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, "imagen");
+        return imagen;
     }
 
     private String llegirText(XmlPullParser parser) throws IOException, XmlPullParserException {
