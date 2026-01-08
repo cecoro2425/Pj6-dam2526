@@ -132,7 +132,7 @@ public class PJ6Main extends AppCompatActivity {
         }
     }
        private void guardarPuntuacion(long tiempo) {
-        /*
+
         Puntuacions utilitatDB =
                 new Puntuacions(getBaseContext());
 
@@ -180,7 +180,7 @@ public class PJ6Main extends AppCompatActivity {
             Log.i("PUNTUACIO", "Temps: " + temps + " segons | Data: " + data);
         }
 
-        cursor.close();*/
+        cursor.close();
     }
 
 }
