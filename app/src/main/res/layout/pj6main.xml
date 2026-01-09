@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ConfirmButton"
         app:layout_constraintEnd_toStartOf="@+id/intents5"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on"
+        app:srcCompat="@android:drawable/btn_star_big_off"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView

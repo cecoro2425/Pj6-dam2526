@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class Puntuacions extends SQLiteOpenHelper {
-    private static final String TIPUS_ENTER="INTERGER";
+    private static final String TIPUS_ENTER=" INTEGER";
     private static final String TIPUS_TEXT = " TEXT";
     private static final String SEPARADOR_COMA = ",";
 

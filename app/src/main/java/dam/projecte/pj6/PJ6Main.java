@@ -31,6 +31,7 @@ public class PJ6Main extends AppCompatActivity {
     private ArrayList<String> llistaJocs;
 
     private ImageView imatgeJoc;
+    private ImageView imatgeStar;
 
     private int indexActual = 0;
     private int intentoJugada = 0;
@@ -91,12 +92,35 @@ public class PJ6Main extends AppCompatActivity {
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .into(imatgeJoc);
+
+        cambiarEstrella();
         // Botón que verifica la respuesta
         btnConfirmar.setOnClickListener(v -> comprovarResposta());
     }
 
+    private void cambiarEstrella(){
+        int[] estrellas = {
+                R.id.intents1,
+                R.id.intents2,
+                R.id.intents3,
+                R.id.intents4,
+                R.id.intents5
+        };
+
+        for (int i = 0; i < estrellas.length; i++) {
+            ImageView estrella = findViewById(estrellas[i]);
+
+            if (i < intentoJugada) {
+                estrella.setImageResource(android.R.drawable.btn_star_big_on);
+            } else {
+                estrella.setImageResource(android.R.drawable.btn_star_big_off);
+            }
+        }
+    }
+
     private void avanzarJuego() {
         indexActual++;
+        intentoJugada = 0;
 
         if (indexActual >= llistaJuegos.size()) {
 
@@ -104,11 +128,15 @@ public class PJ6Main extends AppCompatActivity {
             long tiempoTotal = (tiempoFin - tiempoInicio) / 1000; // segundos(TIEMPO)
             textResultat.setText("¡Has completado todos los juegos!");
             guardarPuntuacion(tiempoTotal);
-            //mostrarPuntuacionesConsola();
+            mostrarPuntuacionesConsola();
             return;
         }
 
-        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada)).into(imatgeJoc);
+        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
+                .into(imatgeJoc);
+        cambiarEstrella();
         inputNom.setText("");
         textHint.setText("");
     }
@@ -119,16 +147,26 @@ public class PJ6Main extends AppCompatActivity {
 
         if (respostaUsuari.equalsIgnoreCase(llistaJuegos.get(indexActual).getNombre())) {
             textResultat.setText("¡Correcto!");
+            intentoJugada = 0;
             avanzarJuego();
         } else {
-            textResultat.setText("Incorrecto");
-            textHint.setText(llistaJuegos.get(indexActual).getPistas().get(intentoJugada));
-            if(intentoJugada<4) intentoJugada++;
-            Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
-                    .placeholder(R.drawable.loading)
-                    .error(R.drawable.error)
-                    .into(imatgeJoc);
-            System.out.println(intentoJugada);
+            if(intentoJugada < 4){
+                textResultat.setText("Incorrecto");
+                textHint.setText(llistaJuegos.get(indexActual).getPistas().get(intentoJugada));
+                if(intentoJugada<4) intentoJugada++;
+                Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+                        .placeholder(R.drawable.loading)
+                        .error(R.drawable.error)
+                        .into(imatgeJoc);
+                cambiarEstrella();
+
+            }else{
+                textResultat.setText("Has perdido esta ronda");
+                textHint.setText("La respuesta era: " + llistaJuegos.get(indexActual).getNombre());
+                intentoJugada = 0;
+                avanzarJuego();
+            }
+
         }
     }
        private void guardarPuntuacion(long tiempo) {
