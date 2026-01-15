@@ -34,4 +34,55 @@
             <pista>Es famoso por sus cinemáticas cinematográficas y escenas de acción épicas.</pista>
         </pistas>
     </juego>
+    <juego id="3">
+        <nombre>Armored Core</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Z-zLvV9LunC64y138zCtI7GIAF507S3T</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Lodxbmh8f3NFlGT2SD7aqMaXRqGaKoap</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1OGvOrqVkO3BZcG0sQRL2DNS7MeD_3l2G</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1ws3xFsoW8eoITmqpjfGwPDuI75pjI2lG</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Lp5HiSBO6Kj9Z7pCBRjKv4yALpS6e0NG</imagen>
+        </imagenes>
+        <pistas>
+            <pista>El protagonista no es un personaje humano tradicional.</pista>
+            <pista>La personalización es una parte clave de la experiencia.</pista>
+            <pista>El combate es rápido y se desarrolla en escenarios futuristas.</pista>
+            <pista>Controlas enormes máquinas de guerra altamente armadas.</pista>
+            <pista>Es una saga creada por el mismo estudio que Dark Souls.</pista>
+        </pistas>
+    </juego>
+    <juego id="4">
+        <nombre>Outerwilds</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1WB80E5PXzZdF2hNptHc2MC-WqIjWGYy1</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Zt3s8yacbXnVbfxIYnlPvLaX4qDWOHny</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1aLKdf-vfTPkmLNMbxKbrmQ_XTunw02EB</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1dJm_Gj90htDLWDnBPza1N7Q8IPgD2W9k</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1DCMtEuad9K5kqroN6HF5O68Q1U0ThYUl</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Es un juego centrado en la exploración y la curiosidad.</pista>
+            <pista>El espacio y los planetas son fundamentales en la experiencia.</pista>
+            <pista>El conocimiento es más importante que las mejoras de personaje.</pista>
+            <pista>El tiempo juega un papel crucial durante la partida.</pista>
+            <pista>Todo ocurre dentro de un bucle temporal de 22 minutos.</pista>
+        </pistas>
+    </juego>
+    <juego id="5">
+        <nombre>Elden Ring</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1NaSw7KO8Qde-IOHwt5gZmfhuDbEKE3QP</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1hPHngs9xHqmlbQKsmdIaTml8Kujld8zG</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=10_Ql5L5zVausy06iZlRksJf9GOcLJNTV</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Z-bE7cZ0BUlTpTfU73WN21UgfTMLzn-s</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1dR19fjJue9KJvKOYjQ2OS_myn3Ea9Hyr</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Se desarrolla en un mundo de fantasía oscuro y misterioso.</pista>
+            <pista>La exploración es libre y recompensa la curiosidad.</pista>
+            <pista>El combate castiga los errores y exige precisión.</pista>
+            <pista>Comparte ADN con una saga famosa por su dificultad.</pista>
+            <pista>Fue desarrollado por FromSoftware y cuenta con la colaboración de George R. R. Martin.</pista>
+        </pistas>
+    </juego>
 </juegos>

@@ -38,11 +38,17 @@ public class PJ6Main extends AppCompatActivity {
     private TextInputEditText inputNom;
     private TextView textResultat, textHint;
     private Button btnConfirmar;
+
+    private List<Integer> indiceRandom = new ArrayList<>();
     private List<LecturaXMLUtility.Juego> llistaJuegos = null;
     //Tiempo
     private long tiempoInicio;
 
+
     protected void onCreate(Bundle savedInstanceState) {
+        //indiceRandom.add((int) Math.floor(Math.random() * 10 + 1));
+
+        System.out.println(indiceRandom);
        /*tiempo*/ tiempoInicio = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pj6main);
