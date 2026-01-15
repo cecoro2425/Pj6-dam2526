@@ -85,4 +85,89 @@
             <pista>Fue desarrollado por FromSoftware y cuenta con la colaboración de George R. R. Martin.</pista>
         </pistas>
     </juego>
+    <juego id="6">
+        <nombre>Deltarune</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=10qSyP5t5BTRGgmUNgktWXfA_bjz92jWA</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1t4tCgCo-kDZ7UzY5GM6zfYS1FAVZptmj</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1t_Vll5y_ootStTyO934PJb0gwvnmvpv3</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1RSvTmR7NuBUN7CkSep-OZNA4H3bhSQdi</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=18dnEU1n4LdjLXqwrYN2MpmSNc-7C6j3D</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Videojuego de rol con estética retro y un sistema de combate poco convencional.</pista>
+            <pista>La historia se desarrolla en un mundo alternativo relacionado con otro RPG muy conocido.</pista>
+            <pista>El protagonista es un estudiante humano que cae en un mundo oscuro junto a su compañera.</pista>
+            <pista>El juego fue creado por Toby Fox, también autor de Undertale.</pista>
+            <pista>RPG con personajes como Kris, Susie y Ralsei, y música muy reconocible.</pista>
+        </pistas>
+    </juego>
+    <juego id="7">
+        <nombre>League of Legends</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1obK3_DVenKMNlaU-WPhssNgOG55v4j61</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=16rQ-9tR8EbZJ7uLYl9EOWCQx5mEtV0oB</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1fg_hfSXlmNTIp1UhMNu2M4SCBOok8exo</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1G5PxRYeIX8WsQWPG6SIAg8HK5YOEJ9-1</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Eh4RoVkHKtoI78IxJ7704QeOqDz9X_tM</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Videojuego competitivo en línea donde dos equipos luchan en un mapa simétrico.</pista>
+            <pista>Cada jugador controla un personaje único con habilidades propias y un rol específico.</pista>
+            <pista>El objetivo principal es destruir la estructura central del equipo rival.</pista>
+            <pista>Juego desarrollado por Riot Games y uno de los eSports más populares del mundo.</pista>
+            <pista>MOBA famoso con campeones como Ahri, Jinx, Lux y Yasuo.</pista>
+        </pistas>
+    </juego>
+    <juego id="8">
+        <nombre>Persona 5</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=11GOnlxg4kCf-KX7m_z8hG1Vj73sZTHQJ</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1WQUvHditIAfgtKGyqAIGYhEK2_Sp0A_3</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1okdK8Qu7hhpI3kgoPLdQzHOZAeXPnGI7</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1b_AbKeWY9t0-H5F2BYGzd2RCkvZWi1aq</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1VP7wriDdf-Cg-Mx7--wRV_oRYvsuQ7JB</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Videojuego de rol japonés donde la vida estudiantil se mezcla con un mundo sobrenatural.</pista>
+            <pista>El grupo protagonista lucha contra enemigos que representan deseos corruptos.</pista>
+            <pista>Los personajes invocan entidades llamadas Personas para combatir.</pista>
+            <pista>El juego fue desarrollado por Atlus y destaca por su estilo visual rojo y negro.</pista>
+            <pista>JRPG protagonizado por los Ladrones Fantasma de Corazones, con personajes como Joker y Morgana.</pista>
+        </pistas>
+    </juego>
+    <juego id="9">
+        <nombre>Silksong</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1CpMZiLxKi1NxxWY-LteDrCVMD4FEJfiZ</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=11Nrp5_eG1X8ez6qAEArtBZVmLU2Z9OGR</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1sFo9C2L60gvY7mVD_5HH7UX1K44w3rYO</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1dg9k5VrxLDyDhoW3RXJl1d5FX8qf8lh5</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=18vX943svJtB0hlQtm4ZI3veYrqp96Vye</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Videojuego de acción y plataformas en 2D con un mundo dibujado a mano.</pista>
+            <pista>Es la continuación de un juego indie muy aclamado por su atmósfera y dificultad.</pista>
+            <pista>La protagonista utiliza agujas y seda como armas principales.</pista>
+            <pista>Desarrollado por Team Cherry y ambientado en un nuevo reino.</pista>
+            <pista>Metroidvania protagonizado por Hornet, derivado de Hollow Knight.</pista>
+        </pistas>
+    </juego>
+    <juego id="10">
+        <nombre>Street Fighter</nombre>
+        <imagenes>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1XPfobz7ew92j27ByP8RbKONkJ42mbKYq</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1N46JzzjR6OaL_bLue4_0EEmm_lVvA8tX</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=143U9FOK2RtIFMTYqf8VrwhRg8vjUo_VU</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1Jbtyen2NlFJLvk-YmCB9udRWSQDF1VRA</imagen>
+            <imagen>https://drive.google.com/uc?export=view&amp;id=1enRCnnxRZ_rYFNmAmQzxPI0wjzJ6YNcq</imagen>
+        </imagenes>
+        <pistas>
+            <pista>Saga de videojuegos centrada en combates uno contra uno entre luchadores de todo el mundo.</pista>
+            <pista>Cada personaje tiene un estilo de lucha propio inspirado en artes marciales reales y ficticias.</pista>
+            <pista>Introdujo movimientos especiales icónicos ejecutados con combinaciones de botones.</pista>
+            <pista>Serie desarrollada por Capcom, fundamental en la historia de los juegos de lucha.</pista>
+            <pista>Famosa por personajes como Ryu, Ken, Chun-Li y ataques como el Hadoken.</pista>
+        </pistas>
+    </juego>
 </juegos>
