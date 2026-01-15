@@ -17,6 +17,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -38,17 +39,32 @@ public class PJ6Main extends AppCompatActivity {
     private TextInputEditText inputNom;
     private TextView textResultat, textHint;
     private Button btnConfirmar;
+    private Button btnCalendari;
+    private Button btnTornarJoc;
 
     private List<Integer> indiceRandom = new ArrayList<>();
+
     private List<LecturaXMLUtility.Juego> llistaJuegos = null;
     //Tiempo
     private long tiempoInicio;
 
 
     protected void onCreate(Bundle savedInstanceState) {
-        //indiceRandom.add((int) Math.floor(Math.random() * 10 + 1));
+        for(int i = 0;i<6;){
+            int numero = (int)Math.floor(Math.random()*10);
+            if (indiceRandom.isEmpty()){
+                indiceRandom.add(numero);
+                i++;
+            }
+            if (!indiceRandom.contains(numero)) {
+                indiceRandom.add(numero);
+                i++;
+
+            }
+        }
 
         System.out.println(indiceRandom);
+
        /*tiempo*/ tiempoInicio = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pj6main);
@@ -91,10 +107,12 @@ public class PJ6Main extends AppCompatActivity {
         textResultat = findViewById(R.id.textResult);
         textHint = findViewById(R.id.textHint);
         btnConfirmar = findViewById(R.id.ConfirmButton);
+        btnCalendari = findViewById(R.id.btnCalendari);
+        btnTornarJoc = findViewById(R.id.btnTornarJoc);
 
         // Mostrar primera imagen
         //imatgeJoc.setImageResource(imatgesJoc[indexActual]);
-        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+        Glide.with(this).load(llistaJuegos.get(indiceRandom.get(indexActual)).getImagenes().get(intentoJugada))
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .into(imatgeJoc);
@@ -128,17 +146,21 @@ public class PJ6Main extends AppCompatActivity {
         indexActual++;
         intentoJugada = 0;
 
-        if (indexActual >= llistaJuegos.size()) {
-
-            long tiempoFin = System.currentTimeMillis();
-            long tiempoTotal = (tiempoFin - tiempoInicio) / 1000; // segundos(TIEMPO)
-            textResultat.setText("¡Has completado todos los juegos!");
-            guardarPuntuacion(tiempoTotal);
-            mostrarPuntuacionesConsola();
-            return;
+        //prueba de random
+        //if (indexActual >= llistaJuegos.size()) {
+        if (indexActual >= indiceRandom.size()) {
+                long tiempoFin = System.currentTimeMillis();
+                long tiempoTotal = (tiempoFin - tiempoInicio) / 1000; // segundos(TIEMPO)
+                textResultat.setText("¡Has completado todos los juegos!");
+                btnConfirmar.setEnabled(false);
+                btnTornarJoc.setVisibility(TextView.VISIBLE);
+                btnCalendari.setVisibility(TextView.VISIBLE);
+                guardarPuntuacion(tiempoTotal);
+                mostrarPuntuacionesConsola();
+                return;
         }
 
-        Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+        Glide.with(this).load(llistaJuegos.get(indiceRandom.get(indexActual)).getImagenes().get(intentoJugada))
                 .placeholder(R.drawable.loading)
                 .error(R.drawable.error)
                 .into(imatgeJoc);
@@ -151,16 +173,16 @@ public class PJ6Main extends AppCompatActivity {
     private void comprovarResposta() {
         String respostaUsuari = inputNom.getText().toString().trim();
 
-        if (respostaUsuari.equalsIgnoreCase(llistaJuegos.get(indexActual).getNombre())) {
+        if (respostaUsuari.equalsIgnoreCase(llistaJuegos.get(indiceRandom.get(indexActual)).getNombre())) {
             textResultat.setText("¡Correcto!");
             intentoJugada = 0;
             avanzarJuego();
         } else {
             if(intentoJugada < 4){
                 textResultat.setText("Incorrecto");
-                textHint.setText(llistaJuegos.get(indexActual).getPistas().get(intentoJugada));
+                textHint.setText(llistaJuegos.get(indiceRandom.get(indexActual)).getPistas().get(intentoJugada));
                 if(intentoJugada<4) intentoJugada++;
-                Glide.with(this).load(llistaJuegos.get(indexActual).getImagenes().get(intentoJugada))
+                Glide.with(this).load(llistaJuegos.get(indiceRandom.get(indexActual)).getImagenes().get(intentoJugada))
                         .placeholder(R.drawable.loading)
                         .error(R.drawable.error)
                         .into(imatgeJoc);
@@ -168,7 +190,7 @@ public class PJ6Main extends AppCompatActivity {
 
             }else{
                 textResultat.setText("Has perdido esta ronda");
-                textHint.setText("La respuesta era: " + llistaJuegos.get(indexActual).getNombre());
+                textHint.setText("La respuesta era: " + llistaJuegos.get(indiceRandom.get(indexActual)).getNombre());
                 intentoJugada = 0;
                 avanzarJuego();
             }
