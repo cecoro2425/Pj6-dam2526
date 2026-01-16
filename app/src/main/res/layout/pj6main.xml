@@ -131,6 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
+        android:onClick="pressBtnCalendari"
         android:text="Calendari"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
